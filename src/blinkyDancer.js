@@ -19,7 +19,6 @@
 // };
 
 var BlinkyDancer = function(top, left, timeBetweenSteps){
-  debugger;
   Dancer.call(this, top, left, timeBetweenSteps);
 };
 
