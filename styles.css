@@ -44,7 +44,6 @@ body, a:link, a:visited, a:active{
 .pointCollector {
   height: 50px;
   width: 50px;
-  /*background-color: red;*/
 }
 
 .pointCollector:hover {
@@ -57,8 +56,59 @@ body, a:link, a:visited, a:active{
   height: 170px;
   width: 100px;
   background-size: 100%;
-  background-image: url('pics/1.png');
   overflow: hidden;
   background-repeat: no-repeat;
-  transition: .5s;
+  /*transition: .5s;*/
+}
+
+.elaine1, .elaine2, .elaine3, .elaine4, .elaine5, .elaine6, .elaine7, .elaine8{
+  background: url('pics/sprites.png') no-repeat;
+}
+
+.elaine1{
+  background-position: -589px -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine2{
+  background-position: -879px 0;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine3{
+  background-position: -445px -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine4{
+  background-position: -736px -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine5{
+  background-position: 0 -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine6{
+  background-position: -152px -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine7{
+  background-position: -302px -3px ;
+  width: 150px;
+  height: 259px;
+}
+
+.elaine8{
+  background-position: -1030px -3px ;
+  width: 150px;
+  height: 259px;
 }
