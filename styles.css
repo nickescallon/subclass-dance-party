@@ -120,6 +120,11 @@ body, a:link, a:visited, a:active{
   background: url('pics/explosion.gif') no-repeat;
   width: 150px;
   height: 259px;
-  background-size: 100%;
+}
 
+.discoball {
+  background: url('pics/discoball.gif') no-repeat;
+  width: 360px;
+  height: 367px;
+  background-size: 100%;
 }
