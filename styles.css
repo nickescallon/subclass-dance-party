@@ -1,5 +1,6 @@
 body, html{
   height:100%;
+  cursor: help;
 }
 body{
   margin: 0px;
@@ -25,17 +26,7 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
-.picture{
-  border: none;
-  border-radius: 0px;
-  height: 170px;
-  width: 100px;
-  background-size: 100%;
-  background-image: url('pics/1.png');
-  overflow: hidden;
-  background-repeat: no-repeat;
-  transition: .5s;
-}
+
 
 .picture:hover {
   -webkit-transform:rotate(360deg);
@@ -53,5 +44,21 @@ body, a:link, a:visited, a:active{
 .pointCollector {
   height: 50px;
   width: 50px;
-  background-color: red;
+  /*background-color: red;*/
+}
+
+.pointCollector:hover {
+  cursor: crosshair;
+}
+
+.picture{
+  border: none;
+  border-radius: 0px;
+  height: 170px;
+  width: 100px;
+  background-size: 100%;
+  background-image: url('pics/1.png');
+  overflow: hidden;
+  background-repeat: no-repeat;
+  transition: .5s;
 }
