@@ -64,6 +64,7 @@
         var timeIn; //time at which user mouses over pointCollector
         var timer; //used to keep track of points
         var gameLevel = 1; //used to keep track of PictureDancer speed
+        var elaine;
         $('.dancefloor').on('mouseenter', '.pointCollector', function(){
           timeIn = new Date();
           var points  = ($('.points').data('points'));
@@ -71,24 +72,37 @@
             points = (Number(points)+.1).toFixed(1);
             $('.points').data('points', points);
             $('.points').text(points);
-          }, 100)
 
-          if(Number(points) > 5*gameLevel) {
-            //find elaine in dancers array
-            var elaine;
-            for(var i = 0; i < window.dancers.length; i++) {
-              if(window.dancers[i].danceMove) {
-                elaine = window.dancers[i];
+            if(Number(points) > 1*gameLevel) {
+              //find elaine in dancers array
+              for(var i = 0; i < window.dancers.length; i++) {
+                if(window.dancers[i].danceMove) {
+                  elaine = window.dancers[i];
+                }
+              }
+              //increase speed
+              elaine.danceMovesBeforeMove -= 4;
+              elaine.timeBetweenSteps -= 20;
+              elaine.animationSpeed -= 150;
+
+              gameLevel++;
+              //Elaine explodes
+              if(gameLevel > 1) {
+                clearInterval(timer);
+                elaine.timeBetweenSteps = 99999999;
+                elaine.$node.removeClass('pointCollector');
+                elaine.$node.addClass('explosion');
+                setTimeout(function(){
+                  //elaine.$node.removeClass();
+                  elaine.$node.addClass('discoball');
+                }, 700)
+                // setTimeout(function(){
+                //   elaine.$node.removeClass();
+                //   elaine.$node.addClass('dancer picture pointCollector explosion');
+                // }, 1000);
               }
             }
-            //increase speed
-            elaine.danceMovesBeforeMove -= 4;
-            elaine.timeBetweenSteps -= 20;
-            elaine.animationSpeed -= 150;
-
-            gameLevel++;
-          }
-
+          }, 100)
         });
         $('.dancefloor').on('mouseleave', '.pointCollector', function(){
           clearInterval(timer);
