@@ -4,6 +4,7 @@ var PictureDancer = function(top,left){
   this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
   this.danceMove = 0;
+  this.animatationSpeed = 1000;
 };
 
 PictureDancer.prototype = Object.create(Dancer.prototype);
@@ -14,7 +15,6 @@ PictureDancer.prototype.step = function(){
   this.$node.removeClass(className);
   this.danceMove = (this.danceMove)%8+1;
   className = 'elaine'+this.danceMove;
-  console.log(className);
   this.$node.addClass(className)
   this.danceMoveCount++;
 
@@ -22,10 +22,11 @@ PictureDancer.prototype.step = function(){
     var top = $("body").height() * Math.random();
     var width = $("body").width() * Math.random();
     $('.dancefloor').find('.pointCollector').trigger('mouseleave');
+    var dancer = this;
     this.$node.animate({
       'top':top,
       'left': width
-    }, 1000);
+    }, dancer.speed);
     this.danceMoveCount = 0;
   }
 };
