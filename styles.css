@@ -40,3 +40,18 @@ body, a:link, a:visited, a:active{
 .picture:hover {
   -webkit-transform:rotate(360deg);
 }
+
+.points {
+  height: 50px;
+  width: 50px;
+  background-color: blue;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
+}
+
+.pointCollector {
+  height: 50px;
+  width: 50px;
+  background-color: red;
+}
