@@ -27,12 +27,19 @@
     <script>
       $(document).ready(function(){
         window.dancers = [];
+        var gameClock = 0;
 
         $(".addDancerButton").on("click", function(event){
           var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
-
+          if(dancerMakerFunctionName === 'PictureDancer') {
+            setInterval(function(){
+              gameClock += 100;
+              $('.timer').text(Number(gameClock/1000).toFixed(1));
+            }, 100);
+          }
           // get the maker function for the kind of dancer we're supposed to make
           var dancerMakerFunction = window[dancerMakerFunctionName];
+
 
           // make a dancer with a random position
           // debugger;
@@ -66,7 +73,6 @@
           }, 100)
         });
         $('.dancefloor').on('mouseleave', '.pointCollector', function(){
-          console.log('clear!');
           clearInterval(timer);
         });
       });
