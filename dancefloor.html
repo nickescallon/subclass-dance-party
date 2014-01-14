@@ -63,6 +63,7 @@
 
         var timeIn; //time at which user mouses over pointCollector
         var timer; //used to keep track of points
+        var gameLevel = 1; //used to keep track of PictureDancer speed
         $('.dancefloor').on('mouseenter', '.pointCollector', function(){
           timeIn = new Date();
           var points  = ($('.points').data('points'));
@@ -71,6 +72,23 @@
             $('.points').data('points', points);
             $('.points').text(points);
           }, 100)
+
+          if(Number(points) > 5*gameLevel) {
+            //find elaine in dancers array
+            var elaine;
+            for(var i = 0; i < window.dancers.length; i++) {
+              if(window.dancers[i].danceMove) {
+                elaine = window.dancers[i];
+              }
+            }
+            //increase speed
+            elaine.danceMovesBeforeMove -= 4;
+            elaine.timeBetweenSteps -= 20;
+            elaine.animationSpeed -= 150;
+
+            gameLevel++;
+          }
+
         });
         $('.dancefloor').on('mouseleave', '.pointCollector', function(){
           clearInterval(timer);
