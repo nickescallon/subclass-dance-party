@@ -53,8 +53,11 @@
           $('body').append(dancer.$node);
         });
         $(".lineUpButton").on("click", function(){
+          var yValue = 10;
           for (var i=0; i<window.dancers.length; i++){
-            window.dancers[i].lineUp();
+            window.dancers[i].lineUp(yValue);
+            yValue += window.dancers[i].$node.height();
+            console.log(yValue);
           }
         });
       });
