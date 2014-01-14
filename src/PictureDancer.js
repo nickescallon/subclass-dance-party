@@ -1,5 +1,5 @@
 var PictureDancer = function(top,left){
-  Dancer.call(this, top, left, 100);
+  Dancer.call(this, top, left, 50);
   this.$node.addClass('picture');
   this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
@@ -10,9 +10,16 @@ PictureDancer.prototype = Object.create(Dancer.prototype);
 PictureDancer.prototype.constructor = PictureDancer;
 PictureDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  var urlString = this.background[this.danceMove];
+  // var urlString = this.background[this.danceMove];
+  // this.$node.css({'background-image':"url('"+urlString+"')"});
+
+  var className = 'elaine'+this.danceMove;
+  if(this.danceMove !== 1) {
+  this.$node.removeClass(className);
+  }
   this.danceMove = (this.danceMove+1)%8;
-  this.$node.css({'background-image':"url('"+urlString+"')"});
+  className = 'elaine'+this.danceMove;
+  this.$node.addClass(className)
   this.danceMoveCount++;
 
   if(this.danceMoveCount === 20) {
@@ -33,14 +40,3 @@ PictureDancer.prototype.lineUp = function(yValue){
   this.setPosition(yValue, 10);
   this.danceMoveCount = 0;
 }
-
-PictureDancer.prototype.background = [
-  'pics/elaine1.png',
-  'pics/elaine2.png',
-  'pics/elaine3.png',
-  'pics/elaine4.png',
-  'pics/elaine5.png',
-  'pics/elaine6.png',
-  'pics/elaine7.png',
-  'pics/elaine8.png'
-];
