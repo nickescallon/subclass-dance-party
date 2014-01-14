@@ -25,3 +25,13 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.picture{
+  border: none;
+  border-radius: 0px;
+  height: 85px;
+  width: 50px;
+  background-size: 100%;
+  background-image: url('pics/1.png');
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
