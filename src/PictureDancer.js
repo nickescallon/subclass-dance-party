@@ -1,30 +1,38 @@
 var PictureDancer = function(top,left){
   Dancer.call(this, top, left, 100);
   this.$node.addClass('picture');
-}
+  this.danceMoveCount = 0;
+  this.danceMove = 1;
+};
 
 PictureDancer.prototype = Object.create(Dancer.prototype);
 PictureDancer.prototype.constructor = PictureDancer;
 PictureDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  var urlString = this.background[Math.floor(Math.random()*6)];
-  var top = $("body").height() * Math.random();
-  var width = $("body").width() * Math.random();
+  var urlString = this.background[this.danceMove];
+  this.danceMove = (this.danceMove+1)%8;
   this.$node.css({'background-image':"url('"+urlString+"')"});
-  this.$node.animate({
-    'top':top,
-    'left': width
-  }, 2000);
+  this.danceMoveCount++;
 
-  // console.log(urlString);
+  if(this.danceMoveCount === 20) {
+    var top = $("body").height() * Math.random();
+    var width = $("body").width() * Math.random();
+    this.$node.animate({
+      'top':top,
+      'left': width
+    }, 1000);
+    this.danceMoveCount = 0;
+  }
+};
 
-}
 
 PictureDancer.prototype.background = [
-  'pics/1.png',
-  'pics/2.png',
-  'pics/3.png',
-  'pics/4.png',
-  'pics/5.png',
-  'pics/6.png'
+  'pics/elaine1.png',
+  'pics/elaine2.png',
+  'pics/elaine3.png',
+  'pics/elaine4.png',
+  'pics/elaine5.png',
+  'pics/elaine6.png',
+  'pics/elaine7.png',
+  'pics/elaine8.png'
 ];
