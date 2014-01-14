@@ -19,8 +19,10 @@
       <a href="#" class="lineUpButton">Lineup</a>
     </div>
 
-    <div class='points' data-points=0>0</div>
-    <div class='pointCollector'></div>
+    <div class='dancefloor'>
+      <div class='points' data-points=0>0</div>
+      <div class='pointCollector'></div>
+    </div>
 
     <script>
       $(document).ready(function(){
@@ -41,7 +43,7 @@
           );
           window.dancers.push(dancer);
 
-          $('body').append(dancer.$node);
+          $('.dancefloor').append(dancer.$node);
         });
 
         $(".lineUpButton").on("click", function(){
@@ -54,7 +56,7 @@
 
         var timeIn; //time at which user mouses over pointCollector
         var timer; //used to keep track of points
-        $('.pointCollector').on('mouseenter', function(){
+        $('.dancefloor').on('mouseenter', '.pointCollector', function(){
           timeIn = new Date();
           var points  = ($('.points').data('points'));
           timer = setInterval(function(){
@@ -63,7 +65,7 @@
             $('.points').text(points);
           }, 100)
         });
-        $('.pointCollector').on('mouseout', function(){
+        $('.dancefloor').on('mouseout', '.pointCollector', function(){
           console.log('clear!');
           clearInterval(timer);
         });
