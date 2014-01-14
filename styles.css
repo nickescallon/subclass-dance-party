@@ -41,9 +41,13 @@ body, a:link, a:visited, a:active{
   line-height: 50px;
 }
 
-.pointCollector {
+.timer {
   height: 50px;
   width: 50px;
+  background-color: green;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 50px;
 }
 
 .pointCollector:hover {
@@ -58,7 +62,6 @@ body, a:link, a:visited, a:active{
   background-size: 100%;
   overflow: hidden;
   background-repeat: no-repeat;
-  /*transition: .5s;*/
 }
 
 .elaine1, .elaine2, .elaine3, .elaine4, .elaine5, .elaine6, .elaine7, .elaine8{
