@@ -4,6 +4,7 @@ var PictureDancer = function(top,left){
   this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
   this.danceMove = 0;
+  this.danceMovesBeforeMove = 20;
   this.animatationSpeed = 1000;
 };
 
@@ -18,7 +19,7 @@ PictureDancer.prototype.step = function(){
   this.$node.addClass(className)
   this.danceMoveCount++;
 
-  if(this.danceMoveCount === 20) {
+  if(this.danceMoveCount === this.danceMovesBeforeMove) {
     var top = $("body").height() * Math.random();
     var width = $("body").width() * Math.random();
     $('.dancefloor').find('.pointCollector').trigger('mouseleave');
