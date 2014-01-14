@@ -62,6 +62,7 @@ body, a:link, a:visited, a:active{
   background-size: 100%;
   overflow: hidden;
   background-repeat: no-repeat;
+  /*transition: 2s;*/
 }
 
 .elaine1, .elaine2, .elaine3, .elaine4, .elaine5, .elaine6, .elaine7, .elaine8{
