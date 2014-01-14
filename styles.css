@@ -128,3 +128,9 @@ body, a:link, a:visited, a:active{
   height: 367px;
   background-size: 100%;
 }
+
+.discodancers {
+  background: url('pics/holyshitdisco.gif') no-repeat;
+  background-size: 100%;
+  overflow: hidden;
+}
