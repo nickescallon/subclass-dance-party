@@ -1,6 +1,7 @@
 var PictureDancer = function(top,left){
   Dancer.call(this, top, left, 100);
   this.$node.addClass('picture');
+  this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
   this.danceMove = 1;
 };
