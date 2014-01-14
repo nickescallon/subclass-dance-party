@@ -52,18 +52,30 @@
           }
         });
 
-        var timeIn, timeOut;
+        var timeIn; //time at which user mouses over pointCollector
+        var timer; //used to keep track of points
         $('.pointCollector').on('mouseenter', function(){
           timeIn = new Date();
+          var points  = ($('.points').data('points'));
+          timer = setInterval(function(){
+            points = (Number(points)+.1).toFixed(1);
+            $('.points').data('points', points);
+            $('.points').text(points);
+          }, 100)
         });
         $('.pointCollector').on('mouseout', function(){
-          timeOut = new Date();
-          var points = ((timeOut-timeIn)/1000 + Number($('.points').data('points'))).toFixed(1);
-          $('.points').data('points', points);
-          $('.points').text(points);
+          console.log('clear!');
+          clearInterval(timer);
         });
       });
     </script>
 
   </body>
 </html>
+
+
+
+
+
+
+
