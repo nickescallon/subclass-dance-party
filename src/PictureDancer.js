@@ -1,11 +1,11 @@
 var PictureDancer = function(top,left){
-  Dancer.call(this, top, left, 125);
+  Dancer.call(this, top, left, 200);
   this.$node.addClass('picture');
   this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
   this.danceMove = 0;
   this.danceMovesBeforeMove = 20;
-  this.animatationSpeed = 1000;
+  this.animatationSpeed = 1500;
 };
 
 PictureDancer.prototype = Object.create(Dancer.prototype);
