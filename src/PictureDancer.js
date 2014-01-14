@@ -26,6 +26,7 @@ PictureDancer.prototype.step = function(){
 };
 
 PictureDancer.prototype.lineUp = function(yValue){
+  this.$node.stop();
   this.danceMoveCount = 100;
   this.setPosition(yValue, 10);
   this.danceMoveCount = 0;
