@@ -1,24 +1,20 @@
 var PictureDancer = function(top,left){
-  Dancer.call(this, top, left, 50);
+  Dancer.call(this, top, left, 125);
   this.$node.addClass('picture');
   this.$node.addClass('pointCollector');
   this.danceMoveCount = 0;
-  this.danceMove = 1;
+  this.danceMove = 0;
 };
 
 PictureDancer.prototype = Object.create(Dancer.prototype);
 PictureDancer.prototype.constructor = PictureDancer;
 PictureDancer.prototype.step = function(){
   Dancer.prototype.step.call(this);
-  // var urlString = this.background[this.danceMove];
-  // this.$node.css({'background-image':"url('"+urlString+"')"});
-
   var className = 'elaine'+this.danceMove;
-  if(this.danceMove !== 1) {
   this.$node.removeClass(className);
-  }
-  this.danceMove = (this.danceMove+1)%8;
+  this.danceMove = (this.danceMove)%8+1;
   className = 'elaine'+this.danceMove;
+  console.log(className);
   this.$node.addClass(className)
   this.danceMoveCount++;
 
