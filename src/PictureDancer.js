@@ -18,6 +18,7 @@ PictureDancer.prototype.step = function(){
   if(this.danceMoveCount === 20) {
     var top = $("body").height() * Math.random();
     var width = $("body").width() * Math.random();
+    $('.dancefloor').find('.pointCollector').trigger('mouseleave');
     this.$node.animate({
       'top':top,
       'left': width
