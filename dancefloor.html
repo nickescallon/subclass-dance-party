@@ -19,7 +19,7 @@
       <a href="#" class="lineUpButton">Lineup</a>
     </div>
 
-    <div class='points'>0</div>
+    <div class='points' data-points=0>0</div>
     <div class='pointCollector'></div>
 
     <script>
@@ -27,18 +27,6 @@
         window.dancers = [];
 
         $(".addDancerButton").on("click", function(event){
-          /* This function sets up the click handlers for the create-dancer
-           * buttons on index.html. You should not need to alter it.
-           * As long as the "data-dancer-maker-function-name" attribute of a
-           * class="addDancerButton" DOM node matches one of the names of the
-           * maker functions available in the global scope, clicking that node
-           * will call the function to make the dancer. */
-
-          /* dancerMakerFunctionName is a string which must match
-           * one of the dancer maker functions available in global scope.
-           * A new object of the given type will be created and added
-           * to the stage.
-           */
           var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
 
           // get the maker function for the kind of dancer we're supposed to make
@@ -55,13 +43,24 @@
 
           $('body').append(dancer.$node);
         });
+
         $(".lineUpButton").on("click", function(){
           var yValue = 10;
           for (var i=0; i<window.dancers.length; i++){
             window.dancers[i].lineUp(yValue);
             yValue += window.dancers[i].$node.height();
-            console.log(yValue);
           }
+        });
+
+        var timeIn, timeOut;
+        $('.pointCollector').on('mouseenter', function(){
+          timeIn = new Date();
+        });
+        $('.pointCollector').on('mouseout', function(){
+          timeOut = new Date();
+          var points = ((timeOut-timeIn)/1000 + Number($('.points').data('points'))).toFixed(1);
+          $('.points').data('points', points);
+          $('.points').text(points);
         });
       });
     </script>
