@@ -34,4 +34,9 @@ body, a:link, a:visited, a:active{
   background-image: url('pics/1.png');
   overflow: hidden;
   background-repeat: no-repeat;
+  transition: .5s;
+}
+
+.picture:hover {
+  -webkit-transform:rotate(360deg);
 }
