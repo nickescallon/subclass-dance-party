@@ -90,11 +90,11 @@
               if(gameLevel > 1) {
                 clearInterval(timer);
                 elaine.timeBetweenSteps = 99999999;
-                elaine.$node.removeClass('pointCollector');
-                elaine.$node.addClass('explosion');
+                elaine.$node.find('span').removeClass('pointCollector');
+                elaine.$node.find('span').addClass('explosion');
                 setTimeout(function(){
                   //elaine.$node.removeClass();
-                  elaine.$node.addClass('discoball');
+                  elaine.$node.find('span').addClass('discoball');
                   $('.dancefloor').css({'height':'100%'});
                   $('.dancefloor').addClass('discodancers');
                 }, 700)
