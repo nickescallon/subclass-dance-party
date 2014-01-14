@@ -115,3 +115,11 @@ body, a:link, a:visited, a:active{
   width: 150px;
   height: 259px;
 }
+
+.explosion {
+  background: url('pics/explosion.gif') no-repeat;
+  width: 150px;
+  height: 259px;
+  background-size: 100%;
+
+}
