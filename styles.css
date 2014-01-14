@@ -28,10 +28,13 @@ body, a:link, a:visited, a:active{
 }
 
 .dancerContainer {
-  transition: .5s;
+  transition: 2s;
+  width: 150px;
+  height: 259px;
 }
 
-.dancerContainer:hover {
+.GrowingColorfulDancer:hover, .dancerContainer:hover{
+  -webkit-transform-origin: 100 100;
   -webkit-transform:rotate(360deg);
 }
 
