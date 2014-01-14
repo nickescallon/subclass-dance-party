@@ -2,6 +2,7 @@ var PictureDancer = function(top,left){
   Dancer.call(this, top, left, 200);
   this.$node = $('<div class="dancerContainer"><span class="dancer"></span></div>');
   this.$node.css({'position':'fixed'});
+  this.setPosition(top, left);
   this.$node.find('span').addClass('picture');
   this.$node.find('span').addClass('pointCollector');
   this.danceMoveCount = 0;
