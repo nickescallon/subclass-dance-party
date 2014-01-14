@@ -65,7 +65,7 @@
             $('.points').text(points);
           }, 100)
         });
-        $('.dancefloor').on('mouseout', '.pointCollector', function(){
+        $('.dancefloor').on('mouseleave', '.pointCollector', function(){
           console.log('clear!');
           clearInterval(timer);
         });
